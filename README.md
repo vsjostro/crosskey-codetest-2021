@@ -17,25 +17,25 @@ The web application is deployed on Heroku. It has the mortgage calculator and al
 Installation instructions to deploy the application locally. 
 
 Clone repository
-```cmd
+```ps1
 git clone https://github.com/vsjostro/mortgageplan-crosskey.git
 ```
 
-```cmd
+```ps1
 cd crosskey-codetest-2021
 ```
 
-Build the project using Maven
-```cmd
-mvnw package
+Build the project using Maven. (Note: JAVA_HOME needs to be set to your JDK directory)
+```ps1
+./mvnw package
 ```
 
 Start web application
-```
+```ps1
 java -jar target/dependency/webapp-runner.jar ./target/crosskey-codetest-2021-1.0-SNAPSHOT.war
 ```
 
 Application has started on port 8080.
-```
+```ps1
 http://localhost:8080/
 ```
