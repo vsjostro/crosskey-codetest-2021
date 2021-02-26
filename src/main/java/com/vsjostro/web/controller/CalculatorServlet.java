@@ -1,4 +1,4 @@
-package com.vsjostro;
+package com.vsjostro.web.controller;
 
 import java.io.*;
 import javax.servlet.ServletException;

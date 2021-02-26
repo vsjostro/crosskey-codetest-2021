@@ -1,4 +1,4 @@
-package com.vsjostro;
+package com.vsjostro.web.controller;
 
 public class Calculator {
 
@@ -7,7 +7,6 @@ public class Calculator {
         int payments = years * 12;
         interest = interest / 100 / 12;
         double monthlyPayment = (loanTotal * (interest * (power((1 + interest), payments)))) / (((power((1 + interest), payments) - 1)));
-
 
         return monthlyPayment;
     }

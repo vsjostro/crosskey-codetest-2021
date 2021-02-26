@@ -12,25 +12,27 @@
 
 <div class="container">
     <h1>Mortgage calculator</h1>
-    <div class="card">
+    <div class="card d-flex justify-content-center" >
         <div class="card-body">
             <form action="/" method="post">
                 <div class="mb-3">
                     <label for="loanTotal" class="form-label">Total loan</label>
-                    <input type="text" class="form-control" id="loanTotal" name="loanTotal" value="${loanTotal}">
+                    <input type="number" class="form-control" id="loanTotal" name="loanTotal" value="${loanTotal}" required>
                 </div>
                 <div class="mb-3">
                     <label for="interest" class="form-label">Interest</label>
-                    <input type="text" class="form-control" id="interest" name="interest" value="${interest}">
+                    <input type="number" class="form-control" id="interest" name="interest" value="${interest}" required>
                 </div>
                 <div class="mb-3">
                     <label for="years" class="form-label">Years to pay loan</label>
-                    <input type="text" class="form-control" id="years" name="years" value="${years}">
+                    <input type="number" class="form-control" id="years" name="years" value="${years}" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
 
                 <p class="lead">${monthlyPayment}</p>
+
+                <a class="btn btn-primary" href="customer">Customer database</a>
 
             </form>
         </div>
