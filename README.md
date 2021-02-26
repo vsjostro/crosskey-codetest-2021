@@ -2,6 +2,8 @@
 
 Mortgage calculator to calculate the fixed monthly payments for a loan.  
 
+The customers have been added to a database and is displayed in the web application by going to the customer tab.
+
 ## Prerequisites 
 Java SE 8 or newer
 
