@@ -1,5 +1,7 @@
 package com.vsjostro.customer;
 
+import com.vsjostro.model.Customer;
+
 import java.sql.*;
 
 import static com.vsjostro.web.controller.Calculator.calculateMortgage;

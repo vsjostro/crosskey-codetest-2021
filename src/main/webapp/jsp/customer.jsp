@@ -13,34 +13,40 @@
 
 
 <div class="container">
-
+    <ul class="p-3 nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Mortgage calculator</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/customer">Customer database</a>
+        </li>
+    </ul>
 
     <h1>Customer monthly payments</h1>
-        <table class="table table-hover table-bordered">
-            <thead>
+
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Total Loan</th>
+            <th scope="col">Interest</th>
+            <th scope="col">Years</th>
+            <th scope="col">Monthly payment</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <c:forEach items="${customerList}" var="customer">
             <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Total Loan</th>
-                <th scope="col">Interest</th>
-                <th scope="col">Years</th>
-                <th scope="col">Monthly payment</th>
+                <td>${customer.name} </td>
+                <td>${customer.loanTotal} </td>
+                <td>${customer.interest} %</td>
+                <td>${customer.years} </td>
+                <td>${customer.monthlyPayment} €</td>
             </tr>
-            </thead>
-            <tbody>
-
-            <c:forEach items="${customerList}" var="customer">
-                <tr>
-                    <td>${customer.name} </td>
-                    <td>${customer.loanTotal} </td>
-                    <td>${customer.interest} %</td>
-                    <td>${customer.years} </td>
-                    <td>${customer.monthlyPayment} €</td>
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-
-    <a href="/" class="btn btn-primary" >Mortgage calculator</a>
+        </c:forEach>
+        </tbody>
+    </table>
 
 </div>
 

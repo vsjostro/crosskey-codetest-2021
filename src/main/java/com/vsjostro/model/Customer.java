@@ -1,4 +1,4 @@
-package com.vsjostro.customer;
+package com.vsjostro.model;
 
 public class Customer {
 

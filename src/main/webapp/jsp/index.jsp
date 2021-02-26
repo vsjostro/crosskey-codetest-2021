@@ -11,28 +11,39 @@
 
 
 <div class="container">
+    <ul class="p-3 nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Mortgage calculator</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/customer">Customer database</a>
+        </li>
+    </ul>
     <h1>Mortgage calculator</h1>
-    <div class="card d-flex justify-content-center" >
+    <div class="card d-flex justify-content-center">
         <div class="card-body">
             <form action="/" method="post">
-                <div class="mb-3">
-                    <label for="loanTotal" class="form-label">Total loan</label>
-                    <input type="number" class="form-control" id="loanTotal" name="loanTotal" value="${loanTotal}" required>
+                <label for="loanTotal" class="form-label">Total loan</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="loanTotal" name="loanTotal" maxlength="20" value="${loanTotal}" min="1"
+                           required>
+                    <span class="input-group-text">€</span>
                 </div>
-                <div class="mb-3">
-                    <label for="interest" class="form-label">Interest</label>
-                    <input type="number" class="form-control" id="interest" name="interest" value="${interest}" required>
+                <label for="interest" class="form-label">Interest</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="interest" name="interest" value="${interest}" maxlength="3" min="0"
+                           required>
+                    <span class="input-group-text">%</span>
                 </div>
+                <label for="years" class="form-label">Years to pay loan</label>
                 <div class="mb-3">
-                    <label for="years" class="form-label">Years to pay loan</label>
-                    <input type="number" class="form-control" id="years" name="years" value="${years}" required>
+                    <input type="number" class="form-control" id="years" name="years" value="${years}" min="1" maxlength="3" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Calculate</button>
 
                 <p class="lead">${monthlyPayment}</p>
 
-                <a class="btn btn-primary" href="customer">Customer database</a>
 
             </form>
         </div>

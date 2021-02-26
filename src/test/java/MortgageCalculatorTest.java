@@ -1,4 +1,4 @@
-import com.vsjostro.customer.Customer;
+import com.vsjostro.model.Customer;
 import org.junit.jupiter.api.Test;
 
 public class MortgageCalculatorTest {

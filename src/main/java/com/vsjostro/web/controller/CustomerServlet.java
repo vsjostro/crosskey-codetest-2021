@@ -1,6 +1,6 @@
 package com.vsjostro.web.controller;
 
-import com.vsjostro.customer.Customer;
+import com.vsjostro.model.Customer;
 
 import java.io.*;
 import java.sql.*;
