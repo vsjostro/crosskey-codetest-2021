@@ -1,5 +1,4 @@
 import com.vsjostro.model.Customer;
-import com.vsjostro.controller.Calculator;
 import org.junit.Test;
 
 
@@ -16,8 +15,5 @@ public class MortgageCalculatorTest {
         customer.setInterest(5);
         customer.setYears(2);
         assertEquals("Juha", customer.getName());
-
-        double monthlyPayment = Calculator.calculateMortgage(customer.getLoanTotal(), customer.getInterest(), customer.getYears());
-        assertEquals("43,87", String.format("%.2f", monthlyPayment));
     }
 }
