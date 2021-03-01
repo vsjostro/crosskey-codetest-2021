@@ -20,7 +20,7 @@ Installation instructions to deploy the application locally.
 
 Clone repository
 ```ps1
-git clone https://github.com/vsjostro/mortgageplan-crosskey.git
+git clone https://github.com/vsjostro/crosskey-codetest-2021.git
 ```
 
 ```ps1
