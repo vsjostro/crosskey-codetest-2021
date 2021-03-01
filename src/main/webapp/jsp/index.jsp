@@ -23,15 +23,19 @@
     <div class="card d-flex justify-content-center">
         <div class="card-body">
             <form action="/" method="post">
+                <label for="customerName" class="form-label">Name</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="customerName" name="customerName"  value="${customerName}" maxlength="50">
+                </div>
                 <label for="loanTotal" class="form-label">Total loan</label>
                 <div class="input-group mb-3">
-                    <input type="number" class="form-control" id="loanTotal" name="loanTotal" maxlength="20" value="${loanTotal}" min="1"
+                    <input type="number" class="form-control" id="loanTotal" name="loanTotal"  value="${loanTotal}" min="1" maxlength="20" step="0.01"
                            required>
                     <span class="input-group-text">€</span>
                 </div>
                 <label for="interest" class="form-label">Interest</label>
                 <div class="input-group mb-3">
-                    <input type="number" class="form-control" id="interest" name="interest" value="${interest}" maxlength="3" min="0"
+                    <input type="number" class="form-control" id="interest" name="interest" value="${interest}" min="0" maxlength="3" step="0.01"
                            required>
                     <span class="input-group-text">%</span>
                 </div>
@@ -40,6 +44,12 @@
                     <input type="number" class="form-control" id="years" name="years" value="${years}" min="1" maxlength="3" required>
                 </div>
 
+                <div class="form-check">
+
+                    <label for="addcustomer" class="form-check-label">Add to database?</label>
+                    <input class="form-check-input" type="checkbox" id="addcustomer" name="addcustomer" value="true">
+
+                </div>
                 <button type="submit" class="btn btn-primary">Calculate</button>
 
                 <p class="lead">${monthlyPayment}</p>

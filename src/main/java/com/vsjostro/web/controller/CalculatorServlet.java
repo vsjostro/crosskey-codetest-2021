@@ -17,15 +17,28 @@ public class CalculatorServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
+        boolean addToDatabase = Boolean.parseBoolean(request.getParameter("addcustomer"));
+        String customerName = request.getParameter("customerName");
         String loanTotal = request.getParameter("loanTotal");
         String interest = request.getParameter("interest");
         String years = request.getParameter("years");
 
+        if (customerName.isEmpty()) {
+
+            customerName = "Anonymous Customer";
+
+        }
+
+        if(addToDatabase) {
+
+
+
+            DatabaseController.addCustomer(customerName, loanTotal, interest, years);
+        }
 
         double monthlyPayment = Calculator.calculateMortgage(Double.parseDouble(loanTotal), Double.parseDouble(interest), Integer.parseInt(years));
 
-        String result = "You need to pay " + String.format("%.2f", monthlyPayment) + "€ each month";
+        String result = customerName + " needs to pay " + String.format("%.2f", monthlyPayment) + "€ each month";
 
         request.setAttribute("monthlyPayment", result);
 

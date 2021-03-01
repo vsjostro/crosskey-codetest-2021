@@ -1,7 +1,4 @@
-<%@ page import="java.io.*,java.util.*,java.sql.*" %>
-<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -36,14 +33,18 @@
         </thead>
         <tbody>
 
+
+        <%--        --%>
         <c:forEach items="${customerList}" var="customer">
+
             <tr>
                 <td>${customer.name} </td>
                 <td>${customer.loanTotal} </td>
                 <td>${customer.interest} %</td>
                 <td>${customer.years} </td>
                 <td>${customer.monthlyPayment} €</td>
-            </tr>
+              </tr>
+
         </c:forEach>
         </tbody>
     </table>
