@@ -1,4 +1,4 @@
-package com.vsjostro.web.controller;
+package com.vsjostro.controller;
 
 import com.vsjostro.model.Customer;
 
@@ -22,27 +22,14 @@ public class CustomerServlet extends HttpServlet {
      */
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-
-
         ArrayList<Customer> customerList = new ArrayList<>();
-
         DatabaseController.getCustomers(customerList);
-
-
         request.setAttribute("customerList", customerList);
-
         getServletContext().getRequestDispatcher("/jsp/customer.jsp").forward(request, response);
-
     }
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
         getServletContext().getRequestDispatcher("/jsp/customer.jsp").forward(request, response);
     }
-
-
-
-
 }

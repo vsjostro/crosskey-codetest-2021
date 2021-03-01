@@ -46,8 +46,8 @@
 
                 <div class="form-check">
 
-                    <label for="addcustomer" class="form-check-label">Add to database?</label>
-                    <input class="form-check-input" type="checkbox" id="addcustomer" name="addcustomer" value="true">
+                    <label for="addCustomer" class="form-check-label">Add to database?</label>
+                    <input class="form-check-input" type="checkbox" id="addCustomer" name="addCustomer" value="true">
 
                 </div>
                 <button type="submit" class="btn btn-primary">Calculate</button>

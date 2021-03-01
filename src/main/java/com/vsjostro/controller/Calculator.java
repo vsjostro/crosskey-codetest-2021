@@ -1,4 +1,4 @@
-package com.vsjostro.web.controller;
+package com.vsjostro.controller;
 
 public class Calculator {
 

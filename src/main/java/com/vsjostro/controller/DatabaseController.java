@@ -1,4 +1,4 @@
-package com.vsjostro.web.controller;
+package com.vsjostro.controller;
 
 import com.vsjostro.model.Customer;
 
@@ -7,9 +7,7 @@ import java.util.ArrayList;
 
 public class DatabaseController {
 
-    public static void getCustomers(ArrayList customerList) {
-
-
+    public static void getCustomers(ArrayList<Customer> customerList) {
         Connection connection;
         Statement statement;
         ResultSet resultSet;
@@ -26,13 +24,12 @@ public class DatabaseController {
 
             while (resultSet.next()) {
 
-                double monthlyPayment;
                 String customerName = resultSet.getString("name");
                 double loanTotal = resultSet.getDouble("loanTotal");
                 double interest = resultSet.getDouble("interest");
                 int years = resultSet.getInt("years");
+                double monthlyPayment = Calculator.calculateMortgage(loanTotal, interest, years);
 
-                monthlyPayment = Calculator.calculateMortgage(loanTotal, interest, years);
                 Customer customer = new Customer();
                 customer.setName(customerName);
                 customer.setLoanTotal(loanTotal);
@@ -41,10 +38,7 @@ public class DatabaseController {
                 customer.setMonthlyPayment(String.format("%.2f", monthlyPayment));
 
                 customerList.add(customer);
-
             }
-
-
 
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -61,11 +55,9 @@ public class DatabaseController {
 
             String url = "jdbc:sqlite:customer.sqlite";
             connection = DriverManager.getConnection(url);
-            System.out.println("Connected");
 
             statement = connection.createStatement();
             statement.executeUpdate("INSERT INTO customers(Name, LoanTotal, Interest, Years) VALUES ('"+ name + "','"+ loanTotal +"','"+ interest + "','" + years + "');");
-
 
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

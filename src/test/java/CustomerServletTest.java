@@ -14,7 +14,5 @@ public class CustomerServletTest {
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM customers;");
         assertTrue(resultSet.next());
-
-
     }
 }
